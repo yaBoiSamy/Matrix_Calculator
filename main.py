@@ -225,6 +225,8 @@ def check_for_commands(parsed_input):
         case "Guide":
             if parsed_input[1:]:
                 raise ValueError("Too many arguments for command 'Guide'")
+            with open("Guide.txt", 'r') as guide:
+                print(guide.read())
             return True
         case "decimals":
             if not parsed_input[1:]:
@@ -320,7 +322,7 @@ def manage_operation(parsed_input):
     print(f"{nametag}:\n{round(result, decimals)}\n")
 
 
-def main():    
+def main():
     parsed_input = parse_input(input(">> "))
     if not parsed_input:
         return
@@ -333,5 +335,6 @@ def main():
         print(e)
 
 
+print("To access command guide, type 'Guide' below")
 while True:
     main()

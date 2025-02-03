@@ -62,4 +62,4 @@ def compute_exponent(base, exponent):  # computes and manages errors for the '^'
     try:
         return np.linalg.matrix_power(base, int(exponent))
     except np.linalg.LinAlgError:
-        raise ValueError("Singular matrix cannot be inverted")
+        raise ValueError("Singular matrix, cannot be inverted")
