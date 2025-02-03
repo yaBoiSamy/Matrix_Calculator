@@ -1,6 +1,7 @@
 import numpy as np
 import os
 import Operations as ops
+from Guide import guide
 
 operator_chars = {' ', '+', '-', '*', '/', '@', '^', '=', '(', ')', '[', ']', '{', '}', ','}
 parentheses_matchups = {'(': ')', '[': ']', '{': '}'}
@@ -225,8 +226,7 @@ def check_for_commands(parsed_input):
         case "Guide":
             if parsed_input[1:]:
                 raise ValueError("Too many arguments for command 'Guide'")
-            with open("Guide.txt", 'r') as guide:
-                print(guide.read())
+            print(guide)
             return True
         case "decimals":
             if not parsed_input[1:]:
