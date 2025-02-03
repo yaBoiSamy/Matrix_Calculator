@@ -3,3 +3,6 @@
 
 # Ignore build directory
 build/
+.idea/
+__pycache__/
+build/main/
