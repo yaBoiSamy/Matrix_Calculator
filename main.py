@@ -182,7 +182,7 @@ def display_variables(*args):  # displays all variables names given to it
         return
     for nametag in args:
         if nametag in variable_repertoire:
-            print(f"{nametag}:\n{round(variable_repertoire[nametag], decimals)}\n")
+            print(f"{nametag}:\n{np.round(variable_repertoire[nametag], decimals)}\n")
         else:
             print(f"Variable {nametag} was not found\n")
 
@@ -319,7 +319,7 @@ def manage_operation(parsed_input):
         variable_repertoire[nametag] = result
     else:
         result = parse_operation(parsed_input)
-    print(f"{nametag}:\n{round(result, decimals)}\n")
+    print(f"{nametag}:\n{np.round(result, decimals)}\n")
 
 
 def main():
