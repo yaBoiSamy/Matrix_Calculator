@@ -247,7 +247,7 @@ def check_for_commands(parsed_input):
 def guard_clauses(parsed_input):
     # Checking for equality signs assigning operations, not new matrices
     if '=' in parsed_input and parsed_input.index('=') not in {0, 1}:
-        raise ValueError("'=' operator misused.")
+        raise ValueError("'=' operator cannot assign operations or assign multiple variables simultaneously.")
 
     # Checking for matrices without operators
     last_subs = parsed_input[0]

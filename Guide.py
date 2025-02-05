@@ -28,11 +28,16 @@ Commands:
 Operation handling:
     All computations respect priority of operations.
     Matrices and vectors are made using accolades.
-    Vectors are made by listing operation that yield components inside the accolades. Ex: {1, 2, 3}
-    Matrices are made by listing operations that yield vectors inside the accolades. Ex: {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
+    Vectors are made by listing components inside the accolades. Ex: {1, 2, 3}
+    Matrices are made by listing vectors inside the accolades. Ex: {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}
     Each vector used to instantiate a matrix is treated like a row of said matrix.
-    Vectors can act as row vectors or column vectors depending on context. Whatever creates a valid operation.
+    Apart from matrix instantiation, vectors can act as row vectors or column vectors depending on context. 
+    Whatever creates a valid operation.
+    1-component vectors and 1x1 matrices are treated like scalars, 
     Determinants are computed by wrapping an operation that yields a matrix inside of brackets. Ex: [{{1, 2}, {3, 4}}]
+    IMPORTANT: Everything is recursive. You can use an operation that outputs a mathematical object as a component
+    to whatever mathematical object you want to instantiate. 
+    Ex: [{X@Y, {[Y]/3, 0}}] Is a valid operation (if X is a 2-component vector and Y is a square matrix)
     Here are the operators at your disposition:
 
     + -> used identically to traditional mathematics.
@@ -40,8 +45,7 @@ Operation handling:
 
     * -> Element-wise multiplication when used on two matrices, normal multiplication when scalars are involved.
     / -> Element-wise division when used on two matrices, normal division when scalars are involved.
-    @ -> Matrix multiplication when matrices are involved, dot product when used on two vectors, normal multiplication
-         when scalars are involved.
+    @ -> Dot product when used on Vectors and Matrices, normal multiplication when scalars are involved.
 
     ^ -> Used for exponentiation. When the exponent is negative, inverts the base before exponentiation.
          Used identically to traditional mathematics otherwise.
