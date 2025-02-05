@@ -22,7 +22,7 @@ Commands:
 
     clear -> Clears the console
 
-    Guide -> Displays the guide (You used it to get here!)
+    guide -> Displays the guide (You used it to get here!)
 
 
 Operation handling:
@@ -35,9 +35,8 @@ Operation handling:
     Whatever creates a valid operation.
     1-component vectors and 1x1 matrices are treated like scalars, 
     Determinants are computed by wrapping an operation that yields a matrix inside of brackets. Ex: [{{1, 2}, {3, 4}}]
-    IMPORTANT: Everything is recursive. You can use an operation that outputs a mathematical object as a component
-    to whatever mathematical object you want to instantiate. 
-    Ex: [{X@Y, {[Y]/3, 0}}] Is a valid operation (if X is a 2-component vector and Y is a square matrix)
+    IMPORTANT: Everything is recursive. You can use an operation as a component to an object you want to instantiate. 
+    Ex: [{X@Y, {[Y]/3, 0}}] Is a valid operation (if X is a 2-component vector and Y is a 2x2 matrix)
     Here are the operators at your disposition:
 
     + -> used identically to traditional mathematics.

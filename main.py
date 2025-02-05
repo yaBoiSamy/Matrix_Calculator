@@ -206,29 +206,29 @@ def check_for_commands(parsed_input):
     
     # Returns True if a command was executed, otherwise false
     match (parsed_input[0]):
-        case "remove":
+        case "remove" | "Remove":
             if not parsed_input[1:] and 'y' == input("Confirm deletion of all variables (y/n): "):
                 variable_repertoire = {}
                 return True
             remove_variables(*tuple(parsed_input[1:]))
             return True
-        case "display":
+        case "display" | "Display":
             if not parsed_input[1:]:
                 display_variables(*tuple(variable_repertoire.keys()))
                 return True
             display_variables(*tuple(parsed_input[1:]))
             return True
-        case "clear":
+        case "clear" | "Clear":
             if parsed_input[1:]:
                 raise ValueError("Too many arguments for command 'clear'")
             os.system('cls')
             return True
-        case "Guide":
+        case "guide" | "Guide":
             if parsed_input[1:]:
                 raise ValueError("Too many arguments for command 'Guide'")
             print(guide)
             return True
-        case "decimals":
+        case "decimals" | "Decimals":
             if not parsed_input[1:]:
                 raise ValueError("Too few arguments for command 'decimals'")
             if len(parsed_input[1:]) > 1:
